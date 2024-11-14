@@ -1,0 +1,18 @@
+.square {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  aspect-ratio: 1;
+}
+
+.head {
+  background-color: #34f385; /* Green for head */
+}
+
+.body {
+  background-color: #27ae60; /* Darker green for body */
+}
+
+.food {
+  background-color: #e74c3c; /* Red for food */
+}

@@ -1,0 +1,114 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 80%;
+  max-width: 400px; /* Limits the modal size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.text {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 50%;
+}
+
+.button:hover {
+  background-color: #20924f; /* Darker shade on hover */
+}
+
+.button:active {
+  background-color: #1b7c43; /* Even darker when clicked */
+}
+
+.title {
+  letter-spacing: 0.1rem;
+  font-size: 1.75rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+/* Radio Button Styling */
+:global(fieldset) {
+  border: none;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+:global(label) {
+  font-size: 1.1em;
+  margin-left: 8px;
+  cursor: pointer;
+  color: #666; /* Geist Gray */
+  transition: color 0.3s;
+}
+
+:global(input[type="radio"]) {
+  display: none;
+}
+
+/* Custom radio button styles */
+:global(input[type="radio"] + label) {
+  position: relative;
+  padding-left: 30px;
+  transition: color 0.3s;
+}
+
+/* Circle design for radio button */
+:global(input[type="radio"] + label:before) {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c6c6c6; /* Geist Light Gray */
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Filled circle for selected state */
+:global(input[type="radio"]:checked + label:before) {
+  background-color: white; /* Geist Blue */
+  border-color: white; /* Geist Blue */
+}
+
+/* Change label color when selected */
+:global(input[type="radio"]:checked + label) {
+  color: white; /* Geist Blue */
+}
+
+/* Add hover effect */
+:global(input[type="radio"] + label:hover) {
+  color: white;
+}
+
+:global(input[type="radio"] + label:before:hover) {
+  border-color: white; /* Geist Blue */
+}
