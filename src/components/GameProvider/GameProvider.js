@@ -18,11 +18,13 @@ function GameProvider({ children }) {
 
   const [score, setScore] = React.useState(INITIALSCORE);
 
-  const [highScore, setHighScore] = React.useState(null);
+  const [highScore, setHighScore] = React.useState(0);
 
   const [showSettings, setShowSettings] = React.useState(false);
 
   const [difficulty, setDifficulty] = React.useState("easy");
+
+  const [speed, setSpeed] = React.useState(200);
 
   // getting local storage value after mount 
   React.useEffect(() => {
@@ -41,6 +43,27 @@ function GameProvider({ children }) {
     setApplePosition(newApple);
     return newApple;
   };
+
+  // function to update speed based on difficulty 
+
+  const handleDifficultyChange = React.useCallback((selectedDifficulty) => {
+
+    setDifficulty(selectedDifficulty);
+
+    switch(selectedDifficulty) {
+      case "easy":
+        setSpeed(200);
+        break;
+      case "medium":
+        setSpeed(130);
+        break;
+      case "hard":
+        setSpeed(90);
+        break;
+      default:
+        setSpeed(200);
+    }
+  }, []);
 
   // initializing new board on mount
   React.useEffect(() => {
@@ -94,6 +117,7 @@ function GameProvider({ children }) {
   // Main game loop
   React.useEffect(() => {
     const interval = setInterval(() => {
+
       setSnake((prevSnake) => {
         const newSnake = [...prevSnake];
         const head = newSnake[0];
@@ -160,10 +184,10 @@ function GameProvider({ children }) {
 
         return newSnake;
       });
-    }, 200);
+    }, speed);
 
     return () => clearInterval(interval);
-  }, [direction, applePosition, gameStatus]);
+  }, [direction, applePosition, gameStatus, speed, difficulty]);
 
   // reset game function
   const resetGame = React.useCallback(() => {
@@ -193,7 +217,7 @@ function GameProvider({ children }) {
   }
 
   return (
-    <GameLogicContext.Provider value={{ board, score, highScore, snake, gameStatus, setGameStatus, resetGame, showSettings, handleToggleSettings, difficulty, setDifficulty }}>
+    <GameLogicContext.Provider value={{ board, score, highScore, snake, gameStatus, setGameStatus, resetGame, showSettings, handleToggleSettings, difficulty, setDifficulty: handleDifficultyChange }}>
       {children}
     </GameLogicContext.Provider>
   );
