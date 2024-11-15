@@ -26,6 +26,8 @@ function GameProvider({ children }) {
 
   const [speed, setSpeed] = React.useState(200);
 
+  const [celebration, setCelebration] = React.useState(false);
+
   // getting local storage value after mount 
   React.useEffect(() => {
     const savedHighScoreValue = window.localStorage.getItem('high-score');
@@ -154,7 +156,8 @@ function GameProvider({ children }) {
             const newHighScore = score;
             setHighScore(newHighScore);
             window.localStorage.setItem('high-score', JSON.stringify(newHighScore));
-          }
+            setCelebration(true);
+          } 
 
           return prevSnake;
         }
@@ -186,7 +189,7 @@ function GameProvider({ children }) {
     }, speed);
 
     return () => clearInterval(interval);
-  }, [direction, applePosition, gameStatus, speed]);
+  }, [direction, applePosition, gameStatus, speed, celebration]);
 
   // reset game function
   const resetGame = React.useCallback(() => {
@@ -196,6 +199,7 @@ function GameProvider({ children }) {
     setSnake(INITIALSNAKE);
     setScore(INITIALSCORE);
     setDirection(null);
+    setCelebration(false);
     
     // Reset board with initial snake
     const newBoard = Array(200).fill(null);
@@ -216,7 +220,7 @@ function GameProvider({ children }) {
   }
 
   return (
-    <GameLogicContext.Provider value={{ board, score, highScore, snake, gameStatus, setGameStatus, resetGame, showSettings, handleToggleSettings, difficulty, setDifficulty: handleDifficultyChange }}>
+    <GameLogicContext.Provider value={{ board, score, highScore, snake, gameStatus, setGameStatus, resetGame, showSettings, handleToggleSettings, difficulty, setDifficulty: handleDifficultyChange, celebration }}>
       {children}
     </GameLogicContext.Provider>
   );
