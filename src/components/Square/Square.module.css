@@ -1,7 +1,7 @@
 .square {
   width: 30px;
   height: 30px;
-  border: 1px solid #ccc;
+  /*border: 1px solid #ccc;*/
   aspect-ratio: 1;
 }
 

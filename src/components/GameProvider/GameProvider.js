@@ -45,7 +45,6 @@ function GameProvider({ children }) {
   };
 
   // function to update speed based on difficulty 
-
   const handleDifficultyChange = React.useCallback((selectedDifficulty) => {
 
     setDifficulty(selectedDifficulty);
@@ -187,7 +186,7 @@ function GameProvider({ children }) {
     }, speed);
 
     return () => clearInterval(interval);
-  }, [direction, applePosition, gameStatus, speed, difficulty]);
+  }, [direction, applePosition, gameStatus, speed]);
 
   // reset game function
   const resetGame = React.useCallback(() => {
