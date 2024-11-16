@@ -10,7 +10,8 @@ function GameOverModal() {
 
   return (
     <Modal>
-      <p className={styles.text}>{`Game Over. Your score is ${score}`} </p> 
+      <p className={styles.text}>{`Game Over`} </p>
+      <p className={styles.text}>{`Your score is ${score}`} </p> 
       <button className={styles.button} onClick={resetGame}>Play Again</button>
     </Modal>
   )
