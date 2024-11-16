@@ -220,12 +220,11 @@ function GameProvider({ children }) {
 
   function handleToggleSettings(event) {
     event.preventDefault();
-    if (showSettings) {
-      setShowModal(false); 
-    } else {
-      setShowModal(true);
-    }
-    setShowSettings(!showSettings);
+    setShowSettings(prev => {
+        const newShowSettings = !prev; // Toggle the settings state
+        setShowModal(newShowSettings); // Set showModal to the same value as newShowSettings
+        return newShowSettings; // Return the new value for showSettings
+    });
   }
 
   const handleClose = () => setShowModal(false);
