@@ -3,12 +3,12 @@ import Modal from '../Modal';
 import { GameLogicContext } from '../GameProvider';
 import styles from '../Modal/Modal.module.css';
 
-function SettingsModal() {
+function SettingsModal({onClose}) {
 
   const {difficulty, setDifficulty} = React.useContext(GameLogicContext);
 
   return (
-    <Modal>
+    <Modal onClose={onClose}>
 
       <div>
         <form onSubmit={(event) => {

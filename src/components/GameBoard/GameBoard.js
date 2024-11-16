@@ -10,14 +10,14 @@ import { GameLogicContext } from "../GameProvider";
 
 
 function GameBoard() {
-  const { board, gameStatus, showSettings } = React.useContext(GameLogicContext);
+  const { board, gameStatus, showSettings, showModal, setShowModal, handleClose } = React.useContext(GameLogicContext);
 
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.title}>Snake</h1>
       <Scoreboard/>
-      {gameStatus === 'lost' && <GameOverModal />}
-      {showSettings && (<SettingsModal />)}
+      {gameStatus === 'lost' && showModal === true && <GameOverModal onClose={handleClose} />}
+      {showSettings && showModal === true && (<SettingsModal onClose={handleClose} />)}
       <div className={styles.grid}>
         {board.map((square, index) => (
           <Square key={index}>{square}</Square>
