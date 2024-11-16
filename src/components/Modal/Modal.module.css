@@ -41,11 +41,12 @@
 .text {
   font-size: 1.2em;
   margin: 0;
+  padding-bottom: 0.5rem;
 }
 
 .button {
   padding: 10px 20px;
-  background-color: #171717;
+  background-color: #006aff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -56,11 +57,11 @@
 }
 
 .button:hover {
-  background-color: #383838; /* Darker shade on hover */
+  background-color: #005ff2;
 }
 
 .button:active {
-  background-color: #383838; /* Even darker when clicked */
+  background-color: #005ff2;
 }
 
 .title {

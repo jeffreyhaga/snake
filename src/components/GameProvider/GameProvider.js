@@ -153,7 +153,8 @@ function GameProvider({ children }) {
           newSnake.slice(0, -1).includes(newHead)
         ) {
           setGameStatus("lost");
-          setShowModal(true)
+          setShowSettings(false);
+          setShowModal(true);
 
           if (score === null || score > highScore) {
             const newHighScore = score;
@@ -220,12 +221,9 @@ function GameProvider({ children }) {
 
   function handleToggleSettings(event) {
     event.preventDefault();
-    setShowSettings(prev => {
-        const newShowSettings = !prev; // Toggle the settings state
-        setShowModal(newShowSettings); // Set showModal to the same value as newShowSettings
-        return newShowSettings; // Return the new value for showSettings
-    });
-  }
+    setShowSettings(true);
+    setShowModal(true); 
+}
 
   const handleClose = () => setShowModal(false);
 

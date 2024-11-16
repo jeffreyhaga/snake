@@ -17,7 +17,7 @@ function GameBoard() {
       <h1 className={styles.title}>Snake</h1>
       <Scoreboard/>
       {gameStatus === 'lost' && showModal && <GameOverModal onClose={handleClose} />}
-      {showSettings && showModal === true && (<SettingsModal onClose={handleClose} />)}
+      {showSettings && showModal && (<SettingsModal onClose={handleClose} />)}
       <div className={styles.grid}>
         {board.map((square, index) => (
           <Square key={index}>{square}</Square>

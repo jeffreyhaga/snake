@@ -15,8 +15,8 @@ function GameOverModal({onClose}) {
 
   return (
     <Modal onClose={resetGame}>
-      <p className={styles.title}>{`Game Over`} </p>
-      <p className={styles.text}>{`Your score is ${score}`} </p> 
+      <p className={styles.title}>{`game over`} </p>
+      <p className={styles.text}>{`your score is ${score}`} </p> 
       <button className={styles.button} onClick={handlePlayAgain}>Play Again</button>
     </Modal>
   )
