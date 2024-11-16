@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .modal {
@@ -26,6 +26,18 @@
   margin-top: -90px;
 }
 
+.header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
 .text {
   font-size: 1.2em;
   margin: 0;
@@ -33,7 +45,7 @@
 
 .button {
   padding: 10px 20px;
-  background-color: #27ae60;
+  background-color: #171717;
   color: white;
   border: none;
   border-radius: 5px;
@@ -44,11 +56,11 @@
 }
 
 .button:hover {
-  background-color: #20924f; /* Darker shade on hover */
+  background-color: #383838; /* Darker shade on hover */
 }
 
 .button:active {
-  background-color: #1b7c43; /* Even darker when clicked */
+  background-color: #383838; /* Even darker when clicked */
 }
 
 .title {
