@@ -15,15 +15,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
+  background-color: white;
+  color: black;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
   width: 80%;
   max-width: 400px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15), 0 3px 5px rgba(0, 0, 0, 0.1);
   margin-top: -90px;
+}
+
+[data-color-theme="dark"] .modal {
+  background-color: black;
+  color: white;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.15);
+  border: 1px solid #1e293b;
 }
 
 .header {
@@ -46,7 +53,7 @@
 
 .button {
   padding: 10px 20px;
-  background-color: #006aff;
+  background-color: black;
   color: white;
   border: none;
   border-radius: 5px;
@@ -56,12 +63,16 @@
   width: 50%;
 }
 
+[data-color-theme="dark"] .button {
+  border: 1px solid #1e293b;
+}
+
 .button:hover {
   background-color: #005ff2;
 }
 
-.button:active {
-  background-color: #005ff2;
+[data-color-theme="dark"] .button:hover {
+  background-color: #1b202e;
 }
 
 .title {
@@ -118,20 +129,28 @@
 
 /* Filled circle for selected state */
 .radio:checked + .label:before {
-  background-color: white;
+  background-color: black;
   border-color: white;
 }
 
 /* Change label color when selected */
 .radio:checked + .label {
-  color: white;
+  color: black;
 }
 
-/* Add hover effect */
+/* Add hover effect 
 .radio + .label:hover {
   color: white;
 }
 
 .radio + .label:before:hover {
   border-color: white;
+}*/
+
+[data-color-theme="dark"] .radio:checked + .label:before {
+  background-color: white;
+}
+
+[data-color-theme="dark"] .radio:checked + .label {
+  color: white;
 }

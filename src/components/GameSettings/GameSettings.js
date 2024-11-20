@@ -1,17 +1,16 @@
 import React from 'react';
 import { Settings } from 'react-feather';
 import { GameLogicContext } from '../GameProvider';
+import styles from './GameSettings.module.css';
 
 function GameSettings() {
 
   const {handleToggleSettings} = React.useContext(GameLogicContext);
 
-  const settingsStyle = {
-    cursor: "pointer"
-  }
-
   return (
-    <Settings size={22} onClick={handleToggleSettings} style={settingsStyle}></Settings>
+    <button className={styles.wrapper}>
+      <Settings size={22} onClick={handleToggleSettings} className={styles.icon}></Settings>
+    </button>
   );
 }
 

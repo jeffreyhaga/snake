@@ -1,3 +1,7 @@
+import React from "react";
+import { cookies } from 'next/headers';
+import ThemeProvider from "@/components/ThemeProvider";
+
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -18,11 +22,19 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+  const savedTheme = cookies().get('color-theme');
+  const theme = savedTheme?.value || 'light';
+
+  //const themeColors = theme === 'light' ? LIGHT_COLORS : DARK_COLORS;
+
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
-      </body>
-    </html>
+    <ThemeProvider>
+      <html lang="en" data-color-theme={theme}>
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          {children}
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }

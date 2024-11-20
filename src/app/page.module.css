@@ -157,8 +157,6 @@ a.secondary {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
+[data-color-theme="dark"] body {
+  background-color: #020817;
 }

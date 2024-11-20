@@ -3,6 +3,7 @@ import { GameLogicContext } from '../GameProvider';
 import styles from './Scoreboard.module.css';
 import GameSettings from '../GameSettings';
 import Confetti from 'react-confetti-boom';
+import DarkLightToggle from '../DarkLightToggle';
 
 
 
@@ -12,17 +13,18 @@ function Scoreboard() {
 
   return (
   <div className={styles.wrapper}>
-     <p>{ `Score: ${score}`}</p>
+     <p className={styles.scores}>{ `Score: ${score}`}</p>
 
       {celebration === true && (
       <div className={styles.confettiWrapper}>
-        <Confetti mode='boom' particleCount={100} shapeSize={12}  deg={272} spreadDeg={10} launchSpeed={1} colors={['#ff577f', '#ff884b', '#ffd384', '#fff9b0' ]} /> 
+        <Confetti mode='boom' particleCount={300} shapeSize={12}  deg={272} spreadDeg={14} launchSpeed={0.75} colors={['#ff577f', '#ff884b', '#ffd384', '#fff9b0' ]} /> 
       </div>
       )}
 
-      {highScore !== null && <p>{ `High Score: ${highScore}`}</p>}
+      {highScore !== null && <p className={styles.scores}>{ `High Score: ${highScore}`}</p>}
 
     <GameSettings/>
+    <DarkLightToggle/>
   </div>);
 }
 

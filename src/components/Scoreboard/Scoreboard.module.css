@@ -7,11 +7,15 @@
 
 .confettiWrapper {
   position: fixed; /* Change to fixed instead of absolute */
-  top: 15%; /* Center vertically */
+  top: 17%; /* Center vertically */
   left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%); /* Center the wrapper */
   width: 100vw; /* Full viewport width */
   height: 100vh; /* Full viewport height */
-  z-index: 2; /* Higher z-index to ensure it's above everything */
+  z-index: 3; /* Higher z-index to ensure it's above everything */
   pointer-events: none; /* Allow clicking through the confetti */
+}
+
+[data-color-theme="dark"] .scores {
+  color: white;
 }

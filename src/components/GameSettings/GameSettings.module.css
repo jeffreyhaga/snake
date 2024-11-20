@@ -1,0 +1,12 @@
+.wrapper {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+[data-color-theme="dark"] .icon {
+  stroke: white;
+}
