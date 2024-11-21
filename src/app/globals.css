@@ -67,3 +67,7 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+[data-color-theme="dark"] body {
+  background-color: #020817;
+}
