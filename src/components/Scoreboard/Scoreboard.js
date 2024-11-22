@@ -13,18 +13,21 @@ function Scoreboard() {
 
   return (
   <div className={styles.wrapper}>
-     <p className={styles.scores}>{ `Score: ${score}`}</p>
+    <div className={styles.scoreWrapper}>
+      <p className={styles.scores}>{ `Score: ${score}`}</p>
 
-      {celebration === true && (
-      <div className={styles.confettiWrapper}>
-        <Confetti mode='boom' particleCount={300} shapeSize={12}  deg={272} spreadDeg={14} launchSpeed={0.75} colors={['#ff577f', '#ff884b', '#ffd384', '#fff9b0' ]} /> 
-      </div>
-      )}
+        {celebration === true && (
+        <div className={styles.confettiWrapper}>
+          <Confetti mode='boom' particleCount={300} shapeSize={12}  deg={272} spreadDeg={14} launchSpeed={0.75} colors={['#ff577f', '#ff884b', '#ffd384', '#fff9b0' ]} /> 
+        </div>
+        )}
 
-      {highScore !== null && <p className={styles.scores}>{ `High Score: ${highScore}`}</p>}
-
-    <GameSettings/>
-    <DarkLightToggle/>
+        {highScore !== null && <p className={styles.scores}>{ `High Score: ${highScore}`}</p>}
+    </div>
+    <div className={styles.iconWrapper}>
+      <GameSettings/>
+      <DarkLightToggle/>
+    </div>
   </div>);
 }
 

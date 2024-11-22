@@ -1,8 +1,19 @@
 .wrapper {
   display: flex;
   flex-direction: row;
-  gap: 6rem;
-  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.scoreWrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.iconWrapper {
+  display: flex;
+  gap: 10px;
 }
 
 .confettiWrapper {
