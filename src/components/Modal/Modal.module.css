@@ -67,10 +67,6 @@
   border: 1px solid #1e293b;
 }
 
-.button:hover {
-  background-color: #005ff2;
-}
-
 [data-color-theme="dark"] .button:hover {
   background-color: #1b202e;
 }
@@ -130,7 +126,7 @@
 /* Filled circle for selected state */
 .radio:checked + .label:before {
   background-color: black;
-  border-color: white;
+  border-color: black;
 }
 
 /* Change label color when selected */
@@ -138,17 +134,9 @@
   color: black;
 }
 
-/* Add hover effect 
-.radio + .label:hover {
-  color: white;
-}
-
-.radio + .label:before:hover {
-  border-color: white;
-}*/
-
 [data-color-theme="dark"] .radio:checked + .label:before {
   background-color: white;
+  border-color: white;
 }
 
 [data-color-theme="dark"] .radio:checked + .label {
