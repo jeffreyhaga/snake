@@ -67,7 +67,7 @@
   border: 1px solid #1e293b;
 }
 
-[data-color-theme="dark"] .button:hover {
+.button:hover {
   background-color: #1b202e;
 }
 
