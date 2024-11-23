@@ -21,12 +21,10 @@ export const metadata = {
   description: "The classic game.",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
 
-  const savedTheme = cookies().get('color-theme');
+  const savedTheme = await cookies().get('color-theme');
   const theme = savedTheme?.value || 'light';
-
-  //const themeColors = theme === 'light' ? LIGHT_COLORS : DARK_COLORS;
 
   return (
     <ThemeProvider>

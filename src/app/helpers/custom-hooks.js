@@ -1,5 +1,3 @@
-import React from "react";
-
 export const useKeyDown = (callback, keys) => {
     const onKeyDown = (event) => {
       const wasAnyKeyPressed = keys.some((key) => event.key === key);
