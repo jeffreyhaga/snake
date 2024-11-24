@@ -16,7 +16,7 @@ This repository contains the code for a modern version of the classic Snake game
 
 ## Technology Stack
 
-- **Next.js**: The React framework for production.
+- **Next.js**: React framework.
 - **React**: A JavaScript library for building user interfaces.
 - **Framer Motion**: A powerful animation library for React.
 - **CSS Modules**: For styling components in a modular and reusable way.
