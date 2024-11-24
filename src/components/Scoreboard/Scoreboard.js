@@ -14,15 +14,17 @@ function Scoreboard() {
   return (
   <div className={styles.wrapper}>
     <div className={styles.scoreWrapper}>
-      <p className={styles.scores}>{ `Score: ${score}`}</p>
+      <React.Suspense fallback={"Loading..."}>
+        <p className={styles.scores}>{ `Score: ${score}`}</p>
 
-        {celebration === true && (
-        <div className={styles.confettiWrapper}>
-          <Confetti mode='boom' particleCount={300} shapeSize={12}  deg={272} spreadDeg={14} launchSpeed={0.75} colors={['#ff577f', '#ff884b', '#ffd384', '#fff9b0' ]} /> 
-        </div>
-        )}
+          {celebration === true && (
+          <div className={styles.confettiWrapper}>
+            <Confetti mode='boom' particleCount={300} shapeSize={12}  deg={272} spreadDeg={14} launchSpeed={0.75} colors={['#ff577f', '#ff884b', '#ffd384', '#fff9b0' ]} /> 
+          </div>
+          )}
 
-        {highScore > 0 && <p className={styles.scores}>{ `High Score: ${highScore}`}</p>}
+          {highScore !== null && <p className={styles.scores}>{ `High Score: ${highScore}`}</p>}
+      </React.Suspense>
     </div>
     <div className={styles.iconWrapper}>
       <GameSettings/>
