@@ -11,8 +11,8 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(20, 30px);
-  grid-template-rows: repeat(10, 30px); /* Add this line */
-  box-shadow: inset 0 0 0 2px #ccc;
+  grid-template-rows: repeat(10, 30px);
+  border: 2px solid #ccc;
   width: fit-content;
   gap: 0;
   border-radius: 8px;
@@ -26,7 +26,7 @@
   line-height: 1.75rem;
   font-weight: 700;
   padding-bottom: 1rem;
-  font-family: "Pixelify Sans", sans-serif;
+  /*font-family: "Pixelify Sans", sans-serif;*/
   font-optical-sizing: auto;
 }
 

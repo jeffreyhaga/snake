@@ -9,6 +9,7 @@
 .scoreWrapper {
   display: flex;
   gap: 10px;
+  padding-left: 6px;
 }
 
 .iconWrapper {

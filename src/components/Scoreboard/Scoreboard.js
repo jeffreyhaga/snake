@@ -22,7 +22,7 @@ function Scoreboard() {
         </div>
         )}
 
-        {highScore !== null && <p className={styles.scores}>{ `High Score: ${highScore}`}</p>}
+        {highScore > 0 && <p className={styles.scores}>{ `High Score: ${highScore}`}</p>}
     </div>
     <div className={styles.iconWrapper}>
       <GameSettings/>
